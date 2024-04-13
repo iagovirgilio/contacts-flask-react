@@ -42,7 +42,6 @@ function App() {
 
   return (
     <>
-      <h1>Contact List</h1>
       <ContactList contacts={contacts} updateContact={openEditModal} updateCallback={onUpdated}/>
       <button onClick={openCreateModal}>Create Contact</button>
       {

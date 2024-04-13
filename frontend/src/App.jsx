@@ -6,6 +6,7 @@ import ContactForm from './ContactForm'
 function App() {
   const [contacts, setContacts] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [currentContact, setCurrentContact] = useState({})
 
   useEffect(() => {
     fetchContacts()
@@ -15,7 +16,6 @@ function App() {
     const response = await fetch('http://127.0.0.1:5000/contacts')
     const data = await response.json()
     setContacts(data.contacts)
-    console.log(data.contacts);
   }
 
   const closeModal = () => {
@@ -25,13 +25,25 @@ function App() {
   const openCreateModal = () => {
     if (!isModalOpen) {
       setIsModalOpen(true)
+      setCurrentContact({})
     }
+  }
+
+  const openEditModal = (contact) => {
+    if (isModalOpen) return
+    setCurrentContact(contact);
+    setIsModalOpen(true);
+  }
+
+  const onUpdated = () => {
+    closeModal();
+    fetchContacts();
   }
 
   return (
     <>
       <h1>Contact List</h1>
-      <ContactList contacts={contacts} />
+      <ContactList contacts={contacts} updateContact={openEditModal} updateCallback={onUpdated}/>
       <button onClick={openCreateModal}>Create Contact</button>
       {
         isModalOpen && (
@@ -40,7 +52,7 @@ function App() {
               <span className="close" onClick={closeModal}>
                 &times;
               </span>
-              <ContactForm />
+              <ContactForm  existingContact={currentContact} updateCallback={onUpdated}/>
             </div>
           </div>
         )

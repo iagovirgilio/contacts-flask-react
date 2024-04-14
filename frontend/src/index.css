@@ -49,8 +49,8 @@ label {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 table th {
@@ -105,4 +105,8 @@ h2 {
   font-family: Arial, sans-serif;
   color: #333;
   text-align: center;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
 }

@@ -2,6 +2,8 @@
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -47,6 +49,8 @@ label {
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 table th {
@@ -88,7 +92,7 @@ button {
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-right: 10px;
+  margin: 0px 10px 0px 0px;
   font-weight: bold;
   font-size: 16px;
 }

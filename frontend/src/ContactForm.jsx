@@ -33,7 +33,7 @@ const ContactForm = ({ existingContact = {}, updateCallback }) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="container">
             <div>
                 <label htmlFor="firstName">First Name:</label>
                 <input

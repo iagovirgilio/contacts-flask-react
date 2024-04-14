@@ -41,7 +41,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="container-fluid">
       <ContactList contacts={contacts} updateContact={openEditModal} updateCallback={onUpdated}/>
       <button onClick={openCreateModal}>Create Contact</button>
       {
@@ -56,7 +56,7 @@ function App() {
           </div>
         )
       }
-    </>
+    </div>
   )
 }
 

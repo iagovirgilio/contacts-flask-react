@@ -1,11 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  font-family: roboto, sans-serif;
+}
+
 input, button, label {
   margin-top: 10px;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  height: 40px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+input::placeholder {
+  color: #999;
+}
+
+label {
+  color: #333;
+  font-size: 16px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
 }
 
 table th {
@@ -29,26 +70,6 @@ table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-input {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f2f2f2;
-  color: #333;
-  font-family: Arial, sans-serif;
-  transition: border-color 0.3s ease;
-}
-
-input:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
-
-input::placeholder {
-  color: #999;
-}
-
 input[type="submit"] {
   background-color: #007bff;
   color: #fff;
@@ -65,7 +86,6 @@ button {
   border-radius: 4px;
   background-color: #007bff;
   color: #fff;
-  font-family: Arial, sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-right: 10px;
